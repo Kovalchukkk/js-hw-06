@@ -14,19 +14,34 @@ const images = [
 ];
 
 // First way
-const callbackImg = ({ url, alt }) => {
-  const imgRef = document.createElement("img");
-  imgRef.src = url;
-  imgRef.alt = alt;
-  const itemRef = document.createElement("li");
-  itemRef.append(imgRef);
-  return itemRef;
+
+// const callbackImg = ({ url, alt }) => {
+//   const imgRef = document.createElement("img");
+//   imgRef.src = url;
+//   imgRef.alt = alt;
+//   const itemRef = document.createElement("li");
+//   itemRef.append(imgRef);
+//   return itemRef;
+// };
+
+// const createListOfElements = (options) => {
+//   return options.map(callbackImg);
+// };
+
+// const galleryListRef = document.querySelector(".gallery");
+
+// galleryListRef.append(...createListOfElements(images));
+
+// Second way
+
+const callbackItemToString = ({ url, alt }) => {
+  return `<li><img src=${url} alt=${alt}></li>`;
 };
 
-const createListOfElements = (options) => {
-  return options.map(callbackImg);
+const createStringOfElements = (options) => {
+  return options.map(callbackItemToString).join("");
 };
 
 const galleryListRef = document.querySelector(".gallery");
 
-galleryListRef.append(...createListOfElements(images));
+galleryListRef.insertAdjacentHTML("afterbegin", createStringOfElements(images));
