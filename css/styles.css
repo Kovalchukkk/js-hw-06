@@ -34,3 +34,30 @@ img {
 #validation-input.invalid {
   border-color: #f44336;
 }
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  max-width: 320px;
+}
+
+.login-form label {
+  margin-bottom: 16px;
+}
+
+.login-form input,
+.login-form button {
+  width: 100%;
+  padding: 4px;
+  font: inherit;
+}
+
+button {
+  padding: 8px 12px;
+  cursor: pointer;
+}
+
+input {
+  padding: 8px;
+  font: inherit;
+}
