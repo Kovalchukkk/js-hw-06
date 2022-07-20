@@ -3,8 +3,12 @@ const btnCreate = document.querySelector("button[data-create]");
 const btnDestroy = document.querySelector("button[data-destroy]");
 
 function createBoxes(amount) {
+  let initialSize = 30;
   for (let i = 0; i < amount; i += 1) {
     const divRef = document.createElement("div");
+    divRef.style.width = `${initialSize}px`;
+    divRef.style.height = `${initialSize}px`;
+    divRef.style.backgroundColor = getRandomHexColor();
   }
 }
 
