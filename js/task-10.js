@@ -3,8 +3,11 @@ const btnCreate = document.querySelector("button[data-create]");
 const btnDestroy = document.querySelector("button[data-destroy]");
 const boxesRef = document.querySelector("#boxes");
 
-function createBoxes(amount) {
+btnCreate.addEventListener("click", createBoxes);
+
+function createBoxes() {
   let initialSize = 30;
+  const amount = inputRef.value;
   for (let i = 0; i < amount; i += 1) {
     const divRef = document.createElement("div");
     divRef.style.width = `${initialSize}px`;
