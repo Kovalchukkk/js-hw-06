@@ -1,6 +1,7 @@
 const inputRef = document.querySelector("input");
 const btnCreate = document.querySelector("button[data-create]");
 const btnDestroy = document.querySelector("button[data-destroy]");
+const boxesRef = document.querySelector("#boxes");
 
 function createBoxes(amount) {
   let initialSize = 30;
@@ -9,6 +10,8 @@ function createBoxes(amount) {
     divRef.style.width = `${initialSize}px`;
     divRef.style.height = `${initialSize}px`;
     divRef.style.backgroundColor = getRandomHexColor();
+    boxesRef.append(divRef);
+    initialSize += 10;
   }
 }
 
